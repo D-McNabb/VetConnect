@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const API = axios.create({
   baseURL: 'http://localhost:5000/api', // backend base URL
 });
@@ -16,6 +17,8 @@ API.interceptors.request.use((config) => {
 export const authAPI = {
   login: (data) => API.post('/auth/login', data),
   register: (data) => API.post('/auth/register', data),
+  forgotPassword: (email) => API.post('/auth/forgot-password', { email }),
+  resetPassword: (token, password) => API.post(`/auth/reset-password/${token}`, { password }),
 };
 
 export const appointmentAPI = {
@@ -24,3 +27,5 @@ export const appointmentAPI = {
 };
 
 export default API;
+
+

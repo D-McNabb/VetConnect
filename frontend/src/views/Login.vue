@@ -13,6 +13,10 @@
         </div>
         <button type="submit" class="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition">Login</button>
         <p class="text-red-500 mt-3" v-if="error">{{ error }}</p>
+        <p class="text-center mt-4 text-sm text-gray-600">
+          Don’t have an account?
+          <router-link to="/register" class="text-indigo-600 font-medium hover:underline">Register here</router-link>
+        </p>
       </form>
     </div>
   </div>
