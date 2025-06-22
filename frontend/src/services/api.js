@@ -26,6 +26,15 @@ export const appointmentAPI = {
   getAll: () => API.get('/appointments'),
 };
 
+
+export const petAPI = {
+  getAll: () => api.get('/pets'),
+  create: (pet) => api.post('/pets', pet),
+  update: (id, pet) => api.put(`/pets/${id}`, pet),
+  delete: (id) => api.delete(`/pets/${id}`)
+};
+
+
 export default API;
 
 
